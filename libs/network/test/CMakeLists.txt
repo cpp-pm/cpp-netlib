@@ -33,8 +33,6 @@ if (Boost_FOUND)
 	if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 	  sugar_target_link_libraries(cpp-netlib-${test} rt)
 	endif()
-        set_target_properties(cpp-netlib-${test}
-            PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CPP-NETLIB_BINARY_DIR}/tests)
         sugar_add_gtest(cpp-netlib-${test}
             ${CPP-NETLIB_BINARY_DIR}/tests/cpp-netlib-${test})
     endforeach (test)

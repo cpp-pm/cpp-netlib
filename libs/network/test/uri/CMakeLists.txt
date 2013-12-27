@@ -30,10 +30,7 @@ if (Boost_FOUND)
         if (OPENSSL_FOUND)
             sugar_target_link_libraries(cpp-netlib-${test} ${OPENSSL_LIBRARIES})
         endif()
-        set_target_properties(cpp-netlib-${test}
-            PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CPP-NETLIB_BINARY_DIR}/tests)
-        sugar_add_gtest(cpp-netlib-${test}
-            ${CPP-NETLIB_BINARY_DIR}/tests/cpp-netlib-${test})
+        sugar_add_gtest(cpp-netlib-${test} cpp-netlib-${test})
     endforeach (test)
 
 endif()
