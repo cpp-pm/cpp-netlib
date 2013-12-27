@@ -34,8 +34,7 @@ if (Boost_FOUND)
 	if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 	  sugar_target_link_libraries(cpp-netlib-http-${test} rt)
 	endif()
-        sugar_add_gtest(cpp-netlib-http-${test}
-            ${CPP-NETLIB_BINARY_DIR}/tests/cpp-netlib-http-${test})
+        sugar_add_gtest(cpp-netlib-http-${test} cpp-netlib-http-${test})
     endforeach (test)
     set ( TESTS
         client_constructor_test
@@ -63,8 +62,7 @@ if (Boost_FOUND)
 	if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 	  sugar_target_link_libraries(cpp-netlib-http-${test} rt)
 	endif()
-        sugar_add_gtest(cpp-netlib-http-${test}
-            ${CPP-NETLIB_BINARY_DIR}/tests/cpp-netlib-http-${test})
+        sugar_add_gtest(cpp-netlib-http-${test} cpp-netlib-http-${test})
     endforeach (test)
 
     set ( SERVER_API_TESTS
@@ -82,8 +80,7 @@ if (Boost_FOUND)
 	if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 	  sugar_target_link_libraries(cpp-netlib-http-${test} rt)
 	endif()
-        sugar_add_gtest(cpp-netlib-http-${test}
-            ${CPP-NETLIB_BINARY_DIR}/tests/cpp-netlib-http-${test})
+        sugar_add_gtest(cpp-netlib-http-${test} cpp-netlib-http-${test})
     endforeach (test)
 
 endif()
