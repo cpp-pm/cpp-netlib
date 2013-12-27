@@ -47,3 +47,5 @@ if (MSVC)
 endif()
 
 enable_testing()
+
+install(DIRECTORY boost DESTINATION include)
