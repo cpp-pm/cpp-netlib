@@ -5,6 +5,28 @@
 
 cmake_minimum_required(VERSION 2.8)
 project(CPP-NETLIB)
+
+include("cmake/HunterGate.cmake")
+include(hunter_add_package)
+hunter_add_package(OpenSSL)
+hunter_add_package(Sugar)
+hunter_add_package(
+    Boost
+    COMPONENTS
+    chrono
+    date_time
+    filesystem
+    program_options
+    regex
+    system
+    test
+    thread
+)
+include("${SUGAR_ROOT}/cmake/Sugar")
+if(APPLE)
+  hunter_add_package(ios_sim)
+endif()
+
 set(Boost_USE_STATIC_LIBS ON)
 set(Boost_USE_MULTI_THREADED ON)
 find_package( Boost 1.45.0 REQUIRED unit_test_framework system regex date_time thread filesystem program_options chrono )
