@@ -6,7 +6,7 @@
 #          http://www.boost.org/LICENSE_1_0.txt)
 
 include(sugar_add_library)
-
+include(sugar_install_library)
 
 include_directories(${CPP-NETLIB_SOURCE_DIR})
 
@@ -18,3 +18,12 @@ sugar_add_library(cppnetlib-server-parsers ${CPP-NETLIB_HTTP_SERVER_SRCS})
 
 set(CPP-NETLIB_HTTP_CLIENT_SRCS client.cpp)
 sugar_add_library(cppnetlib-client-connections ${CPP-NETLIB_HTTP_CLIENT_SRCS})
+
+sugar_install_library(
+    TARGETS
+    cppnetlib-uri
+    cppnetlib-server-parsers
+    cppnetlib-client-connections
+    DESTINATION
+    lib
+)
