@@ -6,7 +6,7 @@
 cmake_minimum_required(VERSION 2.8)
 project(CPP-NETLIB)
 
-include("cmake/HunterGate.cmake")
+include("HunterGate.cmake")
 include(hunter_add_package)
 hunter_add_package(OpenSSL)
 hunter_add_package(Sugar)
