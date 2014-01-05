@@ -48,6 +48,11 @@ if (Boost_FOUND)
             set_source_files_properties(${test}.cpp
                 PROPERTIES COMPILE_FLAGS "-Wall")
         endif()
+        if(MSVC)
+          set_source_files_properties(
+              ${test}.cpp PROPERTIES COMPILE_FLAGS "/bigobj"
+          )
+        endif()
         sugar_add_executable(cpp-netlib-http-${test} ${test}.cpp)
         add_dependencies(cpp-netlib-http-${test}
             cppnetlib-uri
