@@ -59,10 +59,15 @@ namespace boost { namespace network { namespace http {
 
       ~async_client() throw ()
       {
-        sentinel_.reset();
-        if (lifetime_thread_.get()) {
-          lifetime_thread_->join();
-          lifetime_thread_.reset();
+        try {
+          sentinel_.reset();
+          if (lifetime_thread_.get()) {
+            lifetime_thread_->join();
+            lifetime_thread_.reset();
+          }
+        }
+        catch (...) {
+          // https://github.com/cpp-netlib/cpp-netlib/issues/358
         }
       }
 
