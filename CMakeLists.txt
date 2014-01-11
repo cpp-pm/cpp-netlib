@@ -34,6 +34,8 @@ find_package( OpenSSL )
 find_package( Threads )
 set(CMAKE_VERBOSE_MAKEFILE true)
 
+add_definitions(-DBOOST_ALL_NO_LIB)
+
 if (CMAKE_BUILD_TYPE MATCHES Debug)
     add_definitions(-DBOOST_NETWORK_DEBUG)
 endif()
