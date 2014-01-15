@@ -8,13 +8,6 @@ include(sugar_add_executable)
 include(sugar_add_gtest)
 include(sugar_target_link_libraries)
 
-include_directories(${CPP-NETLIB_SOURCE_DIR})
-
-if (OPENSSL_FOUND)
-    include_directories( ${OPENSSL_INCLUDE_DIR} )
-    add_definitions(-DBOOST_NETWORK_ENABLE_HTTPS)
-endif()
-
 if (Boost_FOUND)
     set ( TESTS
         request_incremental_parser_test

@@ -1,5 +1,3 @@
-include_directories(${CPP-NETLIB_SOURCE_DIR})
-
 include(sugar_add_library)
 find_package( Boost 1.45.0 COMPONENTS unit_test_framework system regex thread filesystem )
 

@@ -1,5 +1,3 @@
-include_directories(${CPP-NETLIB_SOURCE_DIR})
-
 include(sugar_add_executable)
 include(sugar_add_gtest)
 include(sugar_target_link_libraries)

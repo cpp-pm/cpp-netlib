@@ -6,11 +6,6 @@
 include(sugar_add_executable)
 include(sugar_target_link_libraries)
 
-include_directories(${CPP-NETLIB_SOURCE_DIR})
-if (OPENSSL_FOUND)
-  include_directories(${OPENSSL_INCLUDE_DIR})
-endif (OPENSSL_FOUND)
-
 sugar_add_executable(http_client http_client.cpp)
 sugar_add_executable(simple_wget simple_wget.cpp)
 sugar_add_executable(atom_reader atom/atom.cpp atom/main.cpp)
