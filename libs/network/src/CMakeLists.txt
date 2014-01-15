@@ -13,7 +13,7 @@ include_directories(${CPP-NETLIB_SOURCE_DIR})
 
 set(CPP-NETLIB_URI_SRCS uri/uri.cpp uri/schemes.cpp)
 sugar_add_library(cppnetlib-uri ${CPP-NETLIB_URI_SRCS})
-sugar_target_link_libraries(cppnetlib-uri ${DL_LIBRARY})
+sugar_target_link_libraries(cppnetlib-uri ${CMAKE_DL_LIBS})
 
 set(CPP-NETLIB_HTTP_SERVER_SRCS server_request_parsers_impl.cpp)
 sugar_add_library(cppnetlib-server-parsers ${CPP-NETLIB_HTTP_SERVER_SRCS})

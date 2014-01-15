@@ -45,13 +45,6 @@ if (OPENSSL_FOUND)
     include_directories(${OPENSSL_INCLUDE_DIR})
 endif()
 
-if(CMAKE_SYSTEM MATCHES "Linux")
-  find_library(DL_LIBRARY dl)
-  if(NOT DL_LIBRARY)
-    message(FATAL_ERROR "`dl` library not found")
-  endif()
-endif()
-
 if (${CMAKE_CXX_COMPILER_ID} MATCHES GNU)
   set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 endif()
