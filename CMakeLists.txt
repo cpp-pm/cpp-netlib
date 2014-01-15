@@ -34,6 +34,8 @@ find_package( OpenSSL )
 find_package( Threads )
 set(CMAKE_VERBOSE_MAKEFILE true)
 
+include_directories("./") # before dependent includes!
+
 add_definitions(-DBOOST_ALL_NO_LIB)
 
 if (CMAKE_BUILD_TYPE MATCHES Debug)
@@ -47,6 +49,12 @@ endif()
 
 if (${CMAKE_CXX_COMPILER_ID} MATCHES GNU)
   set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
+endif()
+
+# http://boost.2283326.n4.nabble.com/config-clang-int128-support-td4653826.html
+check_symbol_exists(__SIZEOF_INT128__ "" has_int128)
+if(NOT MSVC AND has_int128)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DBOOST_HAS_INT128=1")
 endif()
 
 if(NOT MSVC)
